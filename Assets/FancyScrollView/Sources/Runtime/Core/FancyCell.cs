@@ -63,9 +63,9 @@ namespace FancyScrollView
     }
 
     /// <summary>
-    /// <see cref="FancyScrollView{TItemData}"/> のセルを実装するための抽象基底クラス.
+    /// 用于实现 <see cref="FancyScrollView{TItemData}"/> 的单元格的抽象基类.
     /// </summary>
-    /// <typeparam name="TItemData">アイテムのデータ型.</typeparam>
+    /// <typeparam name="TItemData">项目数据的类型.</typeparam>
     /// <seealso cref="FancyCell{TItemData, TContext}"/>
     public abstract class FancyCell<TItemData> : FancyCell<TItemData, NullContext>
     {
