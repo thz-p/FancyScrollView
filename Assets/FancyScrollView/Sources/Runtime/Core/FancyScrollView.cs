@@ -58,18 +58,18 @@ namespace FancyScrollView
         protected float currentPosition;
 
         /// <summary>
-        /// セルの Prefab.
+        /// 单元格的预制体 GameObject.
         /// </summary>
         protected abstract GameObject CellPrefab { get; }
 
         /// <summary>
-        /// アイテム一覧のデータ.
+        /// 项目数据的列表.
         /// </summary>
         protected IList<TItemData> ItemsSource { get; set; } = new List<TItemData>();
 
         /// <summary>
-        /// <typeparamref name="TContext"/> のインスタンス.
-        /// セルとスクロールビュー間で同じインスタンスが共有されます. 情報の受け渡しや状態の保持に使用します.
+        /// <typeparamref name="TContext"/> 的实例.
+        /// 该实例在单元格和滚动视图之间共享，用于传递信息和保持状态.
         /// </summary>
         protected TContext Context { get; } = new TContext();
 
