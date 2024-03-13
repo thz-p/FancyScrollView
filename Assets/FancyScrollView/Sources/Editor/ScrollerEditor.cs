@@ -52,15 +52,23 @@ namespace FancyScrollView
             SetAnimBools(true);
         }
 
+        // 当 Unity Inspector 中禁用脚本时调用
         void OnDisable()
         {
+            // 移除动画变量的监听器，以避免在禁用脚本时触发不必要的重绘操作
             showElasticity.valueChanged.RemoveListener(Repaint);
             showInertiaRelatedValues.valueChanged.RemoveListener(Repaint);
         }
 
+        // 设置动画布尔值
         void SetAnimBools(bool instant)
         {
+            // 设置 showElasticity 的动画布尔值
+            // 如果 movementType 不具有多个不同的值，并且 movementType 的枚举值索引等于 MovementType.Elastic 的整数值
             SetAnimBool(showElasticity, !movementType.hasMultipleDifferentValues && movementType.enumValueIndex == (int)MovementType.Elastic, instant);
+            
+            // 设置 showInertiaRelatedValues 的动画布尔值
+            // 如果 inertia 不具有多个不同的值，并且 inertia 的布尔值为真
             SetAnimBool(showInertiaRelatedValues, !inertia.hasMultipleDifferentValues && inertia.boolValue, instant);
         }
 
