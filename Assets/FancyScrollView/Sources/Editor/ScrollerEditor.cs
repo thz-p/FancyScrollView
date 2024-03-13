@@ -29,8 +29,10 @@ namespace FancyScrollView
         AnimBool showElasticity;
         AnimBool showInertiaRelatedValues;
 
+        // 当 Unity Inspector 中启用脚本时调用
         void OnEnable()
         {
+            // 使用 serializedObject 找到对应属性
             viewport = serializedObject.FindProperty("viewport");
             scrollDirection = serializedObject.FindProperty("scrollDirection");
             movementType = serializedObject.FindProperty("movementType");
@@ -42,8 +44,11 @@ namespace FancyScrollView
             draggable = serializedObject.FindProperty("draggable");
             scrollbar = serializedObject.FindProperty("scrollbar");
 
+            // 实例化 AnimBool 变量，并传入一个委托（Repaint），用于在动画发生改变时重绘界面
             showElasticity = new AnimBool(Repaint);
             showInertiaRelatedValues = new AnimBool(Repaint);
+
+            // 设置初始动画状态
             SetAnimBools(true);
         }
 
