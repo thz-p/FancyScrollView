@@ -32,16 +32,16 @@ namespace FancyScrollView
         [SerializeField, Range(0f, 1f)] protected float scrollOffset = 0.5f;
 
         /// <summary>
-        /// セルを循環して配置させるどうか.
+        /// 是否循环布置单元格.
         /// </summary>
         /// <remarks>
-        /// <c>true</c> にすると最後のセルの後に最初のセル, 最初のセルの前に最後のセルが並ぶようになります.
-        /// 無限スクロールを実装する場合は <c>true</c> を指定します.
+        /// 将其设置为 <c>true</c> 将使最后一个单元格之后出现第一个单元格，第一个单元格之前出现最后一个单元格.
+        /// 当实现无限滚动时，请指定 <c>true</c>.
         /// </remarks>
         [SerializeField] protected bool loop = false;
 
         /// <summary>
-        /// セルの親要素となる <c>Transform</c>.
+        /// 单元格的父级 <c>Transform</c>.
         /// </summary>
         [SerializeField] protected Transform cellContainer = default;
 
