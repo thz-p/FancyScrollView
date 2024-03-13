@@ -84,20 +84,43 @@ namespace FancyScrollView
             }
         }
 
+        // 覆盖基类的 OnInspectorGUI 函数
         public override void OnInspectorGUI()
         {
+            // 调用 SetAnimBools 函数，并传入 false 作为参数
             SetAnimBools(false);
 
+            // 更新序列化对象
             serializedObject.Update();
+
+            // 在编辑器中绘制视口属性字段
             EditorGUILayout.PropertyField(viewport);
+            
+            // 在编辑器中绘制滚动方向属性字段
             EditorGUILayout.PropertyField(scrollDirection);
+            
+            // 在编辑器中绘制运动类型属性字段
             EditorGUILayout.PropertyField(movementType);
+            
+            // 绘制与运动类型相关的值
             DrawMovementTypeRelatedValue();
+            
+            // 在编辑器中绘制滚动灵敏度属性字段
             EditorGUILayout.PropertyField(scrollSensitivity);
+            
+            // 在编辑器中绘制惯性属性字段
             EditorGUILayout.PropertyField(inertia);
+            
+            // 绘制与惯性相关的值
             DrawInertiaRelatedValues();
+            
+            // 在编辑器中绘制可拖动属性字段
             EditorGUILayout.PropertyField(draggable);
+            
+            // 在编辑器中绘制滚动条属性字段
             EditorGUILayout.PropertyField(scrollbar);
+            
+            // 应用修改后的序列化对象
             serializedObject.ApplyModifiedProperties();
         }
 
