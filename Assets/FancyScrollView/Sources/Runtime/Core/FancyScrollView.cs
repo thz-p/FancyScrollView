@@ -48,12 +48,12 @@ namespace FancyScrollView
         readonly IList<FancyCell<TItemData, TContext>> pool = new List<FancyCell<TItemData, TContext>>();
 
         /// <summary>
-        /// 初期化済みかどうか.
+        /// 表示是否已经完成初始化.
         /// </summary>
         protected bool initialized;
 
         /// <summary>
-        /// 現在のスクロール位置.
+        /// 表示当前的滚动位置.
         /// </summary>
         protected float currentPosition;
 
