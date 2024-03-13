@@ -124,17 +124,22 @@ namespace FancyScrollView
             serializedObject.ApplyModifiedProperties();
         }
 
+        // 绘制与运动类型相关的值
         void DrawMovementTypeRelatedValue()
         {
+            // 使用 FadeGroupScope 来控制元素的淡入淡出效果，使用 showElasticity.faded 来控制其可见性
             using (var group = new EditorGUILayout.FadeGroupScope(showElasticity.faded))
             {
+                // 如果组不可见，则直接返回，不进行绘制
                 if (!group.visible)
                 {
                     return;
                 }
 
+                // 使用 IndentLevelScope 来增加缩进级别，使字段在界面上更加清晰
                 using (new EditorGUI.IndentLevelScope())
                 {
+                    // 在缩进的级别上绘制弹性字段
                     EditorGUILayout.PropertyField(elasticity);
                 }
             }
