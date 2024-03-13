@@ -10,25 +10,24 @@ using UnityEngine;
 namespace FancyScrollView
 {
     /// <summary>
-    /// スクロールビューを実装するための抽象基底クラス.
-    /// 無限スクロールおよびスナップに対応しています.
-    /// <see cref="FancyScrollView{TItemData, TContext}.Context"/> が不要な場合は
-    /// 代わりに <see cref="FancyScrollView{TItemData}"/> を使用します.
+    /// 用于实现滚动视图的抽象基类.
+    /// 支持无限滚动和捕捉功能.
+    /// 如果不需要 <see cref="FancyScrollView{TItemData, TContext}.Context"/>，则使用 <see cref="FancyScrollView{TItemData}"/> 代替.
     /// </summary>
-    /// <typeparam name="TItemData">アイテムのデータ型.</typeparam>
-    /// <typeparam name="TContext"><see cref="Context"/> の型.</typeparam>
+    /// <typeparam name="TItemData">项目数据的类型.</typeparam>
+    /// <typeparam name="TContext"><see cref="Context"/> 的类型.</typeparam>
     public abstract class FancyScrollView<TItemData, TContext> : MonoBehaviour where TContext : class, new()
     {
         /// <summary>
-        /// セル同士の間隔.
+        /// 单元格之间的间隔.
         /// </summary>
         [SerializeField, Range(1e-2f, 1f)] protected float cellInterval = 0.2f;
 
         /// <summary>
-        /// スクロール位置の基準.
+        /// 滚动位置的基准.
         /// </summary>
         /// <remarks>
-        /// たとえば、 <c>0.5</c> を指定してスクロール位置が <c>0</c> の場合, 中央に最初のセルが配置されます.
+        /// 例如，指定 <c>0.5</c> 时，如果滚动位置为 <c>0</c>，则第一个单元格将位于中心.
         /// </remarks>
         [SerializeField, Range(0f, 1f)] protected float scrollOffset = 0.5f;
 
